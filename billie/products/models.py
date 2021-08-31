@@ -9,6 +9,7 @@ class Product(models.Model):
     price = models.IntegerField()
     code = models.CharField(max_length=8, unique=True)
     category = models.ManyToManyField('Category')
+    stockcount = models.IntegerField(default=0)
 
     def __str__(self) -> str:
         return f"{self.code} : {self.name}"
